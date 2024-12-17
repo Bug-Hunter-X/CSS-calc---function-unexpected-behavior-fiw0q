@@ -1,0 +1,25 @@
+/* bugSolution.css */
+/* Correctly handle units and operator precedence */
+.container {
+  width: 100%;
+}
+
+.element {
+  width: calc((100% - 10px) / 2);
+  /* Explicitly divide by 2 after subtraction */
+  background-color: lightblue;
+}
+
+.anotherElement {
+  width: calc(100% - 20%); /* Percentage calculations work fine with consistent units */
+  background-color: lightcoral;
+}
+
+/*Avoid mixing units without explicit conversion*/
+.safeCalc {
+  width: calc(100px + 5em);
+}
+
+.betterCalc{
+  width: calc(100px + (5 * 16px)); /* Convert em to pixels if needed */
+}
